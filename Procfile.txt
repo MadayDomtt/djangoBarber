@@ -1,0 +1,1 @@
+web: gunicorn DevBarber.wsgi --log-file -
