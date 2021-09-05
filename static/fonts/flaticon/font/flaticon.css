@@ -1,6 +1,6 @@
 	/*
   	Flaticon icon font: Flaticon
-  	Creation date: 23/07/2019 22:03
+  	Creation date: 13/09/2019 01:45
   	*/
 
 @font-face {
@@ -25,19 +25,14 @@
 [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
 [class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
   font-family: Flaticon;
-        font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+        font-size: 20px;
+font-style: normal;
+margin-left: 20px;
 }
 
-.flaticon-scissors:before { content: "\f100"; }
-.flaticon-beard:before { content: "\f101"; }
-.flaticon-bald:before { content: "\f102"; }
-.flaticon-hair-spray:before { content: "\f103"; }
-.flaticon-hair:before { content: "\f104"; }
-.flaticon-barber-shop:before { content: "\f105"; }
+.flaticon-moustache:before { content: "\f100"; }
+.flaticon-male-hair-of-head-and-face-shapes:before { content: "\f101"; }
+.flaticon-scissors-in-a-hair-salon-badge:before { content: "\f102"; }
+.flaticon-beard:before { content: "\f103"; }
+.flaticon-beauty-products:before { content: "\f104"; }
+.flaticon-healthy-lifestyle-logo:before { content: "\f105"; }
