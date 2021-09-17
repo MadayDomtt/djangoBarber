@@ -38,12 +38,12 @@
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	        	<li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-	        	<li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-	        	<li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
-	        	<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-	        	<li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+	        	<li class="nav-item active"><a href="{%url 'catalogo:index'%}" class="nav-link">Home</a></li>
+	        	<li class="nav-item"><a href="{%url 'catalogo:services'%}" class="nav-link">Services</a></li>
+	        	<li class="nav-item"><a href="{%url 'catalogo:gallery'%}" class="nav-link">Gallery</a></li>
+	        	<li class="nav-item"><a href="{%url 'catalogo:about'%}" class="nav-link">About</a></li>
+	        	<li class="nav-item"><a href="{%url 'catalogo:blog'%}" class="nav-link">Blog</a></li>
+	          <li class="nav-item"><a href="{%url 'catalogo:contact'%}" class="nav-link">Contact</a></li>
 	        </ul>
 	      </div>
 	    </div>
@@ -58,7 +58,7 @@
           	<div class="text text-center">
           		<span class="subheading">Welcome to Haircare</span>
 		  				<h1 class="mb-4">We are professional care for your hair</h1>
-		  				<p><a href="#" class="btn btn-primary btn-outline-primary px-4 py-2">Book now</a></p>
+		  				<p><a href="{%url 'catalogo:services'%}" class="btn btn-primary btn-outline-primary px-4 py-2">Book now</a></p>
 							</div>
             </div>
           </div>
@@ -73,25 +73,25 @@
 						<div class="services-wrap d-flex align-items-center img" style="background-image: url({%static 'images/formen.jpg'%});">
 							<div class="text">
 								<h3>For Men</h3>
-								<p><a href="#" class="btn-custom">See pricing <span class="ion-ios-arrow-round-forward"></span></a></p>
+								<p><a href="{%url 'catalogo:services'%}" class="btn-custom">See pricing <span class="ion-ios-arrow-round-forward"></span></a></p>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-3 text-center d-flex align-items-stretch">
 						<div class="text-about py-5 px-4">
 							<h1 class="logo">
-								<a href="#"><span class="flaticon-scissors-in-a-hair-salon-badge"></span>Haircare</a>
+								<a href="{%url 'catalogo:services'%}"><span class="flaticon-scissors-in-a-hair-salon-badge"></span>Haircare</a>
 							</h1>
 							<h2>Welcome to our Salon</h2>
 							<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-							<p class="mt-3"><a href="#" class="btn btn-primary btn-outline-primary">Read more</a></p>
+							<p class="mt-3"><a href="{%url 'catalogo:about'%}" class="btn btn-primary btn-outline-primary">Read more</a></p>
 						</div>
 					</div>
 					<div class="col-md text-center d-flex align-items-stretch">
 						<div class="services-wrap d-flex align-items-center img" style="background-image: url({%static 'images/forwomen.jpg'%});">
 							<div class="text">
 								<h3>For Women</h3>
-								<p><a href="#" class="btn-custom">See pricing <span class="ion-ios-arrow-round-forward"></span></a></p>
+								<p><a href="{%url 'catalogo:services'%}" class="btn-custom">See pricing <span class="ion-ios-arrow-round-forward"></span></a></p>
 							</div>
 						</div>
 					</div>
@@ -392,72 +392,20 @@
           </div>
         </div>
         <div class="row">
+          {%if allservicios%}
+            {%for arrayservicios in allservicios%}
         	<div class="col-md-3 ftco-animate">
         		<div class="pricing-entry pb-5 text-center">
         			<div>
-	        			<h3 class="mb-4">Hair Style</h3>
-	        			<p><span class="price">$50.00</span> <span class="per">/ session</span></p>
+                        <a style="background-image: url({{arrayservicios.imagenes}});">
+	        			<h3 class="mb-4">{{arrayservicios.tipo}}</h3>
+	        			<p><span class="price">Q{{arrayservicios.precio}}</span> <span class="per">/ sesión</span></p>
 	        		</div>
-        			<ul>
-        				<li>Hair Dryer</li>
-								<li>Hair Coloring</li>
-								<li>Hair Cut</li>
-								<li>Hair Dresser</li>
-								<li>Hair Spa</li>
-        			</ul>
-        			<p class="button text-center"><a href="#" class="btn btn-primary px-4 py-3">Get Offer</a></p>
+        			<p class="button text-center"><a href="{%url 'catalogo:services'%}" class="btn btn-primary px-4 py-3">Get Offer</a></p>
         		</div>
         	</div>
-        	<div class="col-md-3 ftco-animate">
-        		<div class="pricing-entry pb-5 text-center">
-        			<div>
-	        			<h3 class="mb-4">Manicure Pedicure</h3>
-	        			<p><span class="price">$34.50</span> <span class="per">/ session</span></p>
-	        		</div>
-        			<ul>
-        				<li>Manicure</li>
-								<li>Pedicure</li>
-								<li>Coloring</li>
-								<li>Nails</li>
-								<li>Nail Cut</li>
-        			</ul>
-        			<p class="button text-center"><a href="#" class="btn btn-primary px-4 py-3">Get Offer</a></p>
-        		</div>
-        	</div>
-        	<div class="col-md-3 ftco-animate">
-        		<div class="pricing-entry active pb-5 text-center">
-        			<div>
-	        			<h3 class="mb-4">Makeup</h3>
-	        			<p><span class="price">$54.50</span> <span class="per">/ session</span></p>
-	        		</div>
-        			<ul>
-        				<li>Makeup</li>
-								<li>Professional Makeup</li>
-								<li>Blush On</li>
-								<li>Facial Massage</li>
-								<li>Facial Spa</li>
-        			</ul>
-        			<p class="button text-center"><a href="#" class="btn btn-primary px-4 py-3">Get Offer</a></p>
-        		</div>
-        	</div>
-        	<div class="col-md-3 ftco-animate">
-        		<div class="pricing-entry pb-5 text-center">
-        			<div>
-	        			<h3 class="mb-4">Body Treatment</h3>
-	        			<p><span class="price">$89.50</span> <span class="per">/ session</span></p>
-	        		</div>
-        			<ul>
-        				<li>Massage</li>
-								<li>Spa</li>
-								<li>Foot Spa</li>
-								<li>Body Spa</li>
-								<li>Relaxing</li>
-        			</ul>
-        			<p class="button text-center"><a href="#" class="btn btn-primary px-4 py-3">Get Offer</a></p>
-        		</div>
-        	</div>
-        </div>
-			</div>
+            {%endfor%}
+          {%endif%}
 		</section>
 
 		<section class="testimony-section bg-light">
@@ -583,12 +531,12 @@
              <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">Links</h2>
               <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">Home</a></li>
-                <li><a href="#" class="py-2 d-block">About</a></li>
-                <li><a href="#" class="py-2 d-block">Services</a></li>
-                <li><a href="#" class="py-2 d-block">Work</a></li>
-                <li><a href="#" class="py-2 d-block">Blog</a></li>
-                <li><a href="#" class="py-2 d-block">Contact</a></li>
+                <li><a href="{%url 'catalogo:index'%}" class="py-2 d-block">Home</a></li>
+                <li><a href="{%url 'catalogo:about'%}" class="py-2 d-block">About</a></li>
+                <li><a href="{%url 'catalogo:services'%}" class="py-2 d-block">Services</a></li>
+                <li><a href="{%url 'catalogo:blogsingle'%}" class="py-2 d-block">Work</a></li>
+                <li><a href="{%url 'catalogo:blog'%}" class="py-2 d-block">Blog</a></li>
+                <li><a href="{%url 'catalogo:contact'%}" class="py-2 d-block">Contact</a></li>
               </ul>
             </div>
           </div>
